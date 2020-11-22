@@ -1,0 +1,122 @@
+{% extends "page.html" %}
+
+{% block login_widget %}
+{% endblock %}
+
+{% block main %}
+
+<div class="container-fluid">
+
+<div class = "row">
+	
+	<div class='col-md-3'>
+
+		<div class = "well">
+		
+		{% block login %}
+		<h3>
+			The Cloud
+		</h3>
+		<p>
+			<b>System is stable</b> to login to your enviroment please click on the button below
+		</p>	
+		<div class="service-login">
+		  <a role="button" class='btn btn-hrts-pink btn-md ' href='{{authenticator_login_url}}'>
+		    Go
+		  </a>
+		</div>
+	</br>
+		<p>
+			Should you be experiencing any difficulties, have any questions or have a thought on how we can improve The Brain please feel free to reach out to us 
+		</p>
+	  <a role="button" class='btn btn-hrts-grey btn-md ' href='mailto:Virginie.Goupilleau@hearts-science.com'>
+	    Contact Us
+	  </a>
+		</div>
+
+
+		{% endblock login %}
+
+		</div>
+	<div class='col-md-9'>
+		<h1>The Brain</h1>
+		<p>
+			The Brain is a portable cloud environment designed to help with the data and analytics functions required to purchasing media. Included in your environment is a Jupyter notebook server per user along with a Postgres database with <a href="https://madlib.apache.org/docs/v1.10/index.html">MADLIB.net extention</a>. 
+		</p>
+		
+		<p>
+			Included in this deployment are the following tools:
+			<ul>
+				<li>A User Management system capable of monitoring user activity so as to insure our data is both protected and used correctly</li>
+				<li>Jupyter to write notebooks for: R, Python & Julia</li>
+				<li>Code Templates for:
+					<ul>
+						<li>Channel Optimizer</li>
+						<li>Reach Optimizer</li>
+						<li>Topic Model</li>
+						<li>Customer Life Time Value Model</li>
+						<li>Customer Recency Frequency & Monetary Segmentation</li>
+						<li>Audience Building</li>
+						<li>Customer Journeys</li>
+						<li>Recommendation Engine</li>
+					</ul>
+				</li>
+				<li>Database with support for in database analytics and machine learning using MADLIB.net</li>
+				
+			</ul>
+		</p>
+		
+		<h3>Getting Started</h3>
+		
+		<p>The following are useful links to help you get the most out of The Brain</p>
+
+	  <h4>Setting up your enviroment</h4>
+  	  
+	  <p>
+	    A tutorial on how to use interactive notebooks and configure your environment <a href='http://nbviewer.jupyter.org/github/jupyter/notebook/blob/master/docs/source/examples/Notebook/Notebook%20Basics.ipynb'>Notebooks for Dummies</a>
+ 	  </p>
+	
+	  <h4>Learning to Code</h4>
+	  <p>
+	    A crash course in <a href='https://www.w3schools.com/sql/default.asp'>SQL</a>
+ 	  </p>
+	  
+	  <p>
+	    A crash course in <a href='https://github.com/frol/python-tutorials/tree/master/notebooks'>Python</a>
+ 	  </p>
+
+	  <p>
+	    A crash course in <a href='https://bioinformatics-core-shared-training.github.io/r-crash-course/crash-course.nb.html#a_short_introduction_to_r'>R</a>
+ 	  </p>
+	  
+	  <p>
+	    A crash course in <a href='https://www.analyticsvidhya.com/blog/2017/10/comprehensive-tutorial-learn-data-science-julia-from-scratch/'>Julia</a>
+ 	  </p>
+		
+	</div>
+	
+	</div>
+
+
+
+</div>
+
+
+
+
+{% endblock %}
+
+
+
+{% block script %}
+{{super()}}
+
+<script>
+if (window.location.protocol === "http:") {
+  // unhide http warning
+  var warning = document.getElementById('insecure-login-warning');
+  warning.className = warning.className.replace(/\bhidden\b/, '');
+}
+</script>
+
+{% endblock %}

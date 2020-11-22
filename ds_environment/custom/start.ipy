@@ -1,0 +1,76 @@
+# Copyright (c) Jupyter Development Team.
+# Distributed under the terms of the Modified BSD License.
+import sys
+import warnings
+
+# data management
+import pandas as pd
+import numpy as np
+import scipy as sp
+from datetime import datetime, date
+
+import psycopg2 as pg
+from sqlalchemy import create_engine
+
+# charts
+import seaborn as sns
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+import plotly.graph_objs as go
+import plotly.express as px
+
+# statistical modelling
+import statsmodels.api as sm
+import statsmodels.formula.api as smf
+
+# machine learning
+import xgboost as xgb
+
+# memory management
+import gc
+
+from sklearn.model_selection import cross_val_score, \
+    StratifiedKFold, GridSearchCV, train_test_split
+from sklearn.metrics import r2_score
+from IPython.display import HTML
+warnings.filterwarnings('ignore')
+sys.path.append('/home/jovyan/work/DB_connections')
+
+
+# Defines our color theme
+color_dict = {
+    'magenta': "#ff0099",
+    'grey': "#A0AEBE",
+    'black': '#00001E',
+    'blue': "#003C6E",
+    'purple': "#C71585",
+    'gold': "#EEAE09",
+    'chrome': '#C8D3DC',
+    'red': '#EC5F67',
+    'orange': '#F99157',
+    'yellow': '#FAC863',
+    'green': '#99C794',
+    'moss': '#081F2D',
+    'aqua': '#5FB3B3',
+    'blue_lt': '#6699CC',
+    'navy': '#273A72',
+    'purple_lt': '#C594C5',
+    'pink': '#EB99C7'
+}
+
+hide_button='''<script>
+   code_show=true;
+   function code_toggle() {
+    if (code_show){
+    $('div.input').hide();
+    } else {
+    $('div.input').show();
+    }
+    code_show = !code_show
+   }
+   $( document ).ready(code_toggle);
+</script>
+<form action="javascript:code_toggle()"><input type="submit" value="Click here to toggle on/off code."></form>'''
+
+theme_pallete = sns.color_palette(color_dict.values())
+sns.set(style="whitegrid", palette=theme_pallete)
