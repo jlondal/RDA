@@ -2,11 +2,11 @@
 
 This environment fills the gap between direct installation via [The Littlest Jupyterhub](https://tljh.jupyter.org/en/latest/) and managing thousands of users via [JupyterHub with Kubernetes](https://zero-to-jupyterhub.readthedocs.io/en/latest/). If you have a team of 10 - 15 folks in your organisation and want to quickly stand up a Jupyterhub + Postgres with MADLIB and PL/Python database you are in the correct place.
 
-But why the Rugby name? Well this package comes pre isntalled with [PyRugga](https://github.com/jlondal/pyrugga) a library to help analyse Opta super scout files. That was the motifation behind this project. I wanted Juypter setup on my home NAS to analyse rugby matches. You can do more with it!
+But why the Rugby name? Well this environment comes pre installed with [PyRugga](https://github.com/jlondal/pyrugga) a library to help analyse Opta super scout files. That was the motifation behind this project. I wanted Juypter setup on my home NAS to analyse rugby matches. You can do more with it!
 
 ## Quick Start
 
-Before you beging you will need to generate a SSL certificate. Place your .key and .crt into secrets folder. You can either use a self signed [cert](https://medium.com/better-programming/how-to-create-ssl-certificates-for-development-861237235933) or get a free cert from [SSL for free](https://www.sslforfree.com/). Files need to be named 'jupyterhub.crt' and 'juypterhub.key'. In production I would recommend running the environment behind [NGNIX](https://medium.com/@mightywomble/how-to-set-up-nginx-reverse-proxy-with-lets-encrypt-8ef3fd6b79e5). 
+Before you begin you will need to generate a SSL certificate. Place your .key and .crt into secrets folder. You can either use a self signed [cert](https://medium.com/better-programming/how-to-create-ssl-certificates-for-development-861237235933) or get a free cert from [SSL for free](https://www.sslforfree.com/). Files need to be named 'jupyterhub.crt' and 'juypterhub.key'. In production I would recommend running the environment behind [NGNIX](https://medium.com/@mightywomble/how-to-set-up-nginx-reverse-proxy-with-lets-encrypt-8ef3fd6b79e5). 
 
 For the lazy I have provide SSL certs that are not valid. You will get a warning in your browser but you can ignore it and everything should still work. 
 
@@ -20,9 +20,7 @@ bash build.sh
 docker-compose up
 ```
 
-You can access your environment via [JupyterHub](https://127.0.0.1:8000). Note that this will not use valid SSL certs you will need to replace them in the secrets folder. 
-
-To take the environment down type
+You can access your environment via [JupyterHub](https://127.0.0.1:8000).To take the environment down type
 
 ```bash
 docker-compose down
@@ -39,7 +37,7 @@ Username = postgres
 Password = 
 ```
 
-You can access Postgres via any SQL query browsers but we would using pgAdmin 4
+You can access Postgres via any SQL query browsers but we use pgAdmin 4.
 
 Additional MADLIB and PL/Python can be installed as below 
 
