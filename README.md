@@ -10,7 +10,7 @@ Before you begin you will need to generate a SSL certificate. Place your .key an
 
 For the lazy I have provide SSL certs that are not valid. You will get a warning in your browser but you can ignore it and everything should still work. 
 
-Finally there is a file called userlist. This file file contains a list of users you would like to have setup at the start. I would recommend just having one admin user and then creating new users from the admin account. Note the fist time you login as admin you will be asked to create a password. The default user is master_user
+Finally there is a file called userlist. This file file contains a list of users you would like to have setup at the start. I would recommend just having one admin user and then creating new users from the admin account. Note the first time you login as admin you will be asked to create a password. The default user is master_user
 
 The environment can be built by running the `build.sh` script:
 
